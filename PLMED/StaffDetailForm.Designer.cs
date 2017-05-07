@@ -65,14 +65,6 @@
             label8.TabIndex = 35;
             label8.Text = "Mã";
             // 
-            // textBox_id
-            // 
-            this.textBox_id.Location = new System.Drawing.Point(573, 2);
-            this.textBox_id.Name = "textBox_id";
-            this.textBox_id.ReadOnly = true;
-            this.textBox_id.Size = new System.Drawing.Size(75, 20);
-            this.textBox_id.TabIndex = 34;
-            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -100,13 +92,6 @@
             label5.TabIndex = 29;
             label5.Text = "Địa chỉ";
             // 
-            // textBox_address
-            // 
-            this.textBox_address.Location = new System.Drawing.Point(136, 225);
-            this.textBox_address.Name = "textBox_address";
-            this.textBox_address.Size = new System.Drawing.Size(277, 20);
-            this.textBox_address.TabIndex = 28;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -115,13 +100,6 @@
             label4.Size = new System.Drawing.Size(47, 13);
             label4.TabIndex = 27;
             label4.Text = "Chức vụ";
-            // 
-            // textBox_position
-            // 
-            this.textBox_position.Location = new System.Drawing.Point(136, 167);
-            this.textBox_position.Name = "textBox_position";
-            this.textBox_position.Size = new System.Drawing.Size(277, 20);
-            this.textBox_position.TabIndex = 26;
             // 
             // label3
             // 
@@ -132,13 +110,6 @@
             label3.TabIndex = 25;
             label3.Text = "Số điện thoại";
             // 
-            // textBox_telephone
-            // 
-            this.textBox_telephone.Location = new System.Drawing.Point(136, 111);
-            this.textBox_telephone.Name = "textBox_telephone";
-            this.textBox_telephone.Size = new System.Drawing.Size(277, 20);
-            this.textBox_telephone.TabIndex = 24;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -148,13 +119,6 @@
             label2.TabIndex = 23;
             label2.Text = "Tên";
             // 
-            // textBox_name
-            // 
-            this.textBox_name.Location = new System.Drawing.Point(136, 57);
-            this.textBox_name.Name = "textBox_name";
-            this.textBox_name.Size = new System.Drawing.Size(277, 20);
-            this.textBox_name.TabIndex = 22;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -163,6 +127,42 @@
             label1.Size = new System.Drawing.Size(72, 13);
             label1.TabIndex = 21;
             label1.Text = "Mã nhân viên";
+            // 
+            // textBox_id
+            // 
+            this.textBox_id.Location = new System.Drawing.Point(573, 2);
+            this.textBox_id.Name = "textBox_id";
+            this.textBox_id.ReadOnly = true;
+            this.textBox_id.Size = new System.Drawing.Size(75, 20);
+            this.textBox_id.TabIndex = 34;
+            // 
+            // textBox_address
+            // 
+            this.textBox_address.Location = new System.Drawing.Point(136, 225);
+            this.textBox_address.Name = "textBox_address";
+            this.textBox_address.Size = new System.Drawing.Size(277, 20);
+            this.textBox_address.TabIndex = 28;
+            // 
+            // textBox_position
+            // 
+            this.textBox_position.Location = new System.Drawing.Point(136, 167);
+            this.textBox_position.Name = "textBox_position";
+            this.textBox_position.Size = new System.Drawing.Size(277, 20);
+            this.textBox_position.TabIndex = 26;
+            // 
+            // textBox_telephone
+            // 
+            this.textBox_telephone.Location = new System.Drawing.Point(136, 111);
+            this.textBox_telephone.Name = "textBox_telephone";
+            this.textBox_telephone.Size = new System.Drawing.Size(277, 20);
+            this.textBox_telephone.TabIndex = 24;
+            // 
+            // textBox_name
+            // 
+            this.textBox_name.Location = new System.Drawing.Point(136, 57);
+            this.textBox_name.Name = "textBox_name";
+            this.textBox_name.Size = new System.Drawing.Size(277, 20);
+            this.textBox_name.TabIndex = 22;
             // 
             // textBox_code
             // 
@@ -181,6 +181,7 @@
             this.btn_cancel.TabIndex = 19;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // btn_OK
             // 
@@ -191,6 +192,7 @@
             this.btn_OK.TabIndex = 18;
             this.btn_OK.Text = "OK";
             this.btn_OK.UseVisualStyleBackColor = true;
+            this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
             // 
             // dateTimePicker_birthday
             // 

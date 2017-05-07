@@ -20,21 +20,6 @@ namespace PLMED
         public CustomerDetailForm()
         {
             InitializeComponent();
-            textBox_name.Text = RandomString(20);
-            textBox_email.Text = RandomString(10);
-            textBox_taxCode.Text = RandomString(10);
-            textBox_category.Text = RandomString(10);
-            textBox_address.Text = RandomString(10);
-            textBox_telephone.Text = RandomString(10);
-            textBox_contact.Text = RandomString(10);
-        }
-
-        private static Random random = new Random();
-        private static string RandomString(int length)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string(Enumerable.Repeat(chars, length)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
         private void btn_OK_Click(object sender, EventArgs e)

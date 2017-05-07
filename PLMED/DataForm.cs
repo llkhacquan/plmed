@@ -49,7 +49,6 @@ namespace PLMED
 
         private void btn_new_Click(object sender, EventArgs e)
         {
-
             if (DetailForm.create())
             {
                 loadData(null);
@@ -110,7 +109,7 @@ namespace PLMED
 
             StringBuilder sql = new StringBuilder("SELECT * FROM " + t.name);
             SqlDataAdapter dataadapter;
-            if (query == null)
+            if (query == null || query.Length == 0)
             {
                 dataadapter = new SqlDataAdapter(sql.ToString(), conn);
             }
@@ -124,6 +123,10 @@ namespace PLMED
                     if (f is StringField)
                     {
                         sql.Append(f.nameInDB);
+                    }
+                    else if (f is DateField)
+                    {
+                        sql.Append("FORMAT(").Append(f.nameInDB).Append(",'dd/MM/yyyy')");
                     }
                     else
                     {
