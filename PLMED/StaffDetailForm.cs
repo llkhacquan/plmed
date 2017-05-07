@@ -28,7 +28,7 @@ namespace PLMED
             textBox_position.Text = Utility.RandomString(10);
             textBox_telephone.Text = Utility.RandomString(10);
 
-            this.Text = "Thêm khách hàng";
+            this.Text = "Thêm nhân viên";
             textBox_id.Text = "";
             editMode = false;
             ShowDialog();

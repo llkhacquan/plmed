@@ -76,6 +76,9 @@
     <Build Include="Sales\Stored Procedures\newStaff.sql" />
     <Build Include="Sales\Stored Procedures\updateStaff.sql" />
     <Build Include="Sales\Stored Procedures\deleteStaff.sql" />
+    <Build Include="Sales\Stored Procedures\deleteProduct.sql" />
+    <Build Include="Sales\Stored Procedures\newProduct.sql" />
+    <Build Include="Sales\Stored Procedures\updateProduct.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="PLMEDDatabase.refactorlog" />
