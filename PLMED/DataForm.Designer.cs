@@ -30,13 +30,12 @@
         {
             System.Windows.Forms.Button btn_delete;
             System.Windows.Forms.Button btn_edit;
-            System.Windows.Forms.Button button_refresh;
             System.Windows.Forms.Button btn_new;
+            this.button_search = new System.Windows.Forms.Button();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             btn_delete = new System.Windows.Forms.Button();
             btn_edit = new System.Windows.Forms.Button();
-            button_refresh = new System.Windows.Forms.Button();
             btn_new = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -63,16 +62,16 @@
             btn_edit.UseVisualStyleBackColor = true;
             btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
-            // button_refresh
+            // button_search
             // 
-            button_refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            button_refresh.Location = new System.Drawing.Point(850, 12);
-            button_refresh.Name = "button_refresh";
-            button_refresh.Size = new System.Drawing.Size(123, 81);
-            button_refresh.TabIndex = 8;
-            button_refresh.Text = "Tìm kiếm";
-            button_refresh.UseVisualStyleBackColor = true;
-            button_refresh.Click += new System.EventHandler(this.button_search_Click);
+            this.button_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_search.Location = new System.Drawing.Point(850, 12);
+            this.button_search.Name = "button_search";
+            this.button_search.Size = new System.Drawing.Size(123, 81);
+            this.button_search.TabIndex = 8;
+            this.button_search.Text = "Tìm kiếm";
+            this.button_search.UseVisualStyleBackColor = true;
+            this.button_search.Click += new System.EventHandler(this.button_search_Click);
             // 
             // btn_new
             // 
@@ -117,7 +116,7 @@
             this.Controls.Add(this.textBox_search);
             this.Controls.Add(btn_delete);
             this.Controls.Add(btn_edit);
-            this.Controls.Add(button_refresh);
+            this.Controls.Add(this.button_search);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(btn_new);
             this.Name = "DataForm";
@@ -132,5 +131,6 @@
 
         private System.Windows.Forms.TextBox textBox_search;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button button_search;
     }
 }

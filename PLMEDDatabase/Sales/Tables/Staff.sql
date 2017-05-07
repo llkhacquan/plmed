@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [Sales].[Staff]
 (
-	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
     [code] NCHAR(100) NOT NULL, 
     [name] NCHAR(100) NOT NULL, 
 	[telephone] NCHAR(100) NULL, 

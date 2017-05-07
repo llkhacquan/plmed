@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContractDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContractDetailForm.Designer.cs">
+      <DependentUpon>ContractDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,7 @@
     <Compile Include="CustomerDetailForm.Designer.cs">
       <DependentUpon>CustomerDetailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="entity\Contract.cs" />
     <Compile Include="entity\Customer.cs" />
     <Compile Include="entity\Entity.cs" />
     <Compile Include="entity\Field.cs" />
@@ -81,6 +88,12 @@
     <Compile Include="entity\Table.cs" />
     <Compile Include="IDetailForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductDetailForm.cs">
       <SubType>Form</SubType>
@@ -97,11 +110,17 @@
       <DependentUpon>StaffDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utility.cs" />
+    <EmbeddedResource Include="ContractDetailForm.resx">
+      <DependentUpon>ContractDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerDetailForm.resx">
       <DependentUpon>CustomerDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataForm.resx">
       <DependentUpon>DataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductDetailForm.resx">
       <DependentUpon>ProductDetailForm.cs</DependentUpon>

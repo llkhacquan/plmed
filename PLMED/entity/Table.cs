@@ -10,10 +10,6 @@ namespace PLMED.entity
     {
         internal readonly String name;
         internal Field[] fields;
-        String loadDataQuery;
-        String deleteDataQuery;
-        String searchDataQuery;
-        String updateDataQuery;
 
         internal Table(string name, Field[] fields)
         {
@@ -49,6 +45,16 @@ namespace PLMED.entity
             new StringField("name", 100),
             new StringField("price", 100),
             new StringField("type", 100)
+        });
+
+        internal static readonly Table ContractTable = new Table("[Sales].[Contract]", new Field[] {
+            new IntegerField("id"),
+            new StringField("code", 100),
+            new StringField("name", 100),
+            new IntegerField("customer_id"),
+            new IntegerField("staff_id"),
+            new IntegerField("valye"),
+            new DateField("signdate")
         });
     }
 }

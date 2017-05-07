@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace PLMED.entity
 {
-    internal class Staff : Entity
+    class Contract : Entity
     {
-        public int id { get; set; }
-        public String Name { get; set; }
-
         public Table getTable()
         {
-            return Table.StaffTable;
+            return Table.ContractTable;
         }
     }
 }

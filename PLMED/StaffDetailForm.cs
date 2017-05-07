@@ -13,8 +13,6 @@ namespace PLMED
 {
     internal partial class StaffDetailForm : IDetailForm
     {
-        bool editMode;
-        bool result;
         public StaffDetailForm()
         {
             InitializeComponent();

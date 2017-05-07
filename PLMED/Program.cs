@@ -17,9 +17,7 @@ namespace PLMED
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            DataForm<Product> form = new DataForm<Product>();
-            form.loadData(null);
-            Application.Run(form);
+            Application.Run(new MainForm());
         }
     }
 }

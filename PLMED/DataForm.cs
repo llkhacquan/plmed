@@ -14,7 +14,7 @@ namespace PLMED
 {
     internal partial class DataForm<T> : Form where T : Entity
     {
-        private IDetailForm form;
+        private IDetailForm form = null;
         private IDetailForm DetailForm
         {
             get
@@ -32,6 +32,10 @@ namespace PLMED
                     else if (typeof(T) == typeof(Product))
                     {
                         form = new ProductDetailForm();
+                    }
+                    else if(typeof(T) == typeof(Contract))
+                    {
+                        form = new ContractDetailForm();
                     }
                     else
                     {
@@ -87,59 +91,11 @@ namespace PLMED
 
         internal void loadData(string query)
         {
-            string connectionString = Utility.GetConnectionString();
-            SqlConnection conn = new SqlConnection(connectionString);
-            Table t = null;
-            if (typeof(T) == typeof(Customer))
-            {
-                t = Table.CustomerTable;
-            }
-            else if (typeof(T) == typeof(Staff))
-            {
-                t = Table.StaffTable;
-            }
-            else if (typeof(T) == typeof(Product))
-            {
-                t = Table.ProductTable;
-            }
-            else
-            {
-                throw new Exception("Cannot detect type of T : " + typeof(T));
-            }
-
-            StringBuilder sql = new StringBuilder("SELECT * FROM " + t.name);
+            SqlConnection conn = new SqlConnection(Utility.GetConnectionString());
             SqlDataAdapter dataadapter;
-            if (query == null || query.Length == 0)
-            {
-                dataadapter = new SqlDataAdapter(sql.ToString(), conn);
-            }
-            else
-            {
-                query = query.ToUpper();
-                sql.Append("\nWHERE ");
-                foreach (Field f in t.fields)
-                {
-                    sql.Append("UPPER(");
-                    if (f is StringField)
-                    {
-                        sql.Append(f.nameInDB);
-                    }
-                    else if (f is DateField)
-                    {
-                        sql.Append("FORMAT(").Append(f.nameInDB).Append(",'dd/MM/yyyy')");
-                    }
-                    else
-                    {
-                        sql.Append("STR(").Append(f.nameInDB).Append(") ");
-                    }
-                    sql.Append(")");
-                    sql.Append(" like '%").Append(query).Append("%' ");
-                    sql.Append("\nOR ");
-                }
-                sql.Remove(sql.Length - 4, 4);
-                SqlCommand cmdSearch = new SqlCommand(sql.ToString(), conn);
-                dataadapter = new SqlDataAdapter(cmdSearch);
-            }
+            SqlCommand cmdSearch = DetailForm.load(typeof(T), query);
+            cmdSearch.Connection = conn;
+            dataadapter = new SqlDataAdapter(cmdSearch);
             DataSet ds = new DataSet();
             try
             {
@@ -159,7 +115,7 @@ namespace PLMED
         {
             if (e.KeyChar == '\r') // ENTER
             {
-                button_search_Click(sender, null);
+                button_search.PerformClick();
             }
             else if (e.KeyChar == 27) // ESC
             {

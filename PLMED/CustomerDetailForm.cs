@@ -14,9 +14,6 @@ namespace PLMED
 {
     internal partial class CustomerDetailForm : IDetailForm
     {
-        Boolean editMode = false;
-        Boolean result;
-
         public CustomerDetailForm()
         {
             InitializeComponent();
@@ -60,7 +57,7 @@ namespace PLMED
             catch (Exception exception)
             {
                 success = false;
-                MessageBox.Show("Cập nhật khách hàng không thành công.\nLỗi : " + exception.Message);                
+                MessageBox.Show("Cập nhật khách hàng không thành công.\nLỗi : " + exception.Message);
             }
             finally
             {
@@ -141,7 +138,7 @@ namespace PLMED
             if (DialogResult == DialogResult.OK)
                 return result;
             else
-                return false;            
+                return false;
         }
 
         private bool createCustomer()
@@ -173,7 +170,7 @@ namespace PLMED
 
         internal override bool update(DataGridViewRow row)
         {
-            textBox_id.Text = (string) row.Cells[0].Value;
+            textBox_id.Text = (string)row.Cells[0].Value.ToString();
             textBox_name.Text = row.Cells[1].Value.ToString();
             textBox_email.Text = row.Cells[2].Value.ToString();
             textBox_taxCode.Text = row.Cells[3].Value.ToString();
@@ -190,8 +187,6 @@ namespace PLMED
             else
                 return false;
         }
-        
     }
-
 
 }
