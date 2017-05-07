@@ -72,8 +72,10 @@
     <Build Include="Sales\Tables\Staff.sql" />
     <Build Include="Sales\Stored Procedures\uspUpdateCustomer.sql" />
     <Build Include="Sales\Stored Procedures\uspDeleteCustomer.sql" />
-    <Build Include="Sales\Stored Procedures\uspSearchCustomer.sql" />
     <Build Include="Sales\Tables\Contract.sql" />
+    <Build Include="Sales\Stored Procedures\newStaff.sql" />
+    <Build Include="Sales\Stored Procedures\updateStaff.sql" />
+    <Build Include="Sales\Stored Procedures\deleteStaff.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="PLMEDDatabase.refactorlog" />

@@ -7,10 +7,19 @@ using System.Windows.Forms;
 
 namespace PLMED
 {
-    internal abstract class IDetailForm : Form
+    internal class IDetailForm : Form
     {
-        internal abstract Boolean delete(int id);
-        internal abstract Boolean create();
-        internal abstract Boolean update(DataGridViewRow row);
+        internal virtual Boolean delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+        internal virtual Boolean create()
+        {
+            throw new NotImplementedException();
+        }
+        internal virtual Boolean update(DataGridViewRow row)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

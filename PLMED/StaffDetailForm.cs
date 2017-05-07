@@ -19,17 +19,17 @@ namespace PLMED
 
         internal override bool create()
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         internal override bool delete(int id)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         internal override bool update(DataGridViewRow row)
         {
-            throw new NotImplementedException();
+            return false;
         }
     }
 }

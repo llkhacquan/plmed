@@ -61,25 +61,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerMainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerMainForm.Designer.cs">
-      <DependentUpon>CustomerMainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DataForm.Designer.cs">
       <DependentUpon>DataForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="entity\Customer.cs" />
     <Compile Include="CustomerDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomerDetailForm.Designer.cs">
       <DependentUpon>CustomerDetailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="entity\Customer.cs" />
     <Compile Include="entity\Entity.cs" />
     <Compile Include="entity\Field.cs" />
     <Compile Include="entity\Product.cs" />
@@ -103,9 +97,6 @@
       <DependentUpon>StaffDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utility.cs" />
-    <EmbeddedResource Include="CustomerMainForm.resx">
-      <DependentUpon>CustomerMainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CustomerDetailForm.resx">
       <DependentUpon>CustomerDetailForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +112,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StaffDetailForm.resx">
+      <DependentUpon>StaffDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

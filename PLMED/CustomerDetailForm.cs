@@ -188,26 +188,16 @@ namespace PLMED
 
         internal override bool update(DataGridViewRow row)
         {
-            Customer value = new Customer();
-            value.id = Int32.Parse(row.Cells[0].Value.ToString());
-            value.Name = row.Cells[1].Value.ToString();
-            value.Email = row.Cells[2].Value.ToString();
-            value.TaxCode = row.Cells[3].Value.ToString();
-            value.Category = row.Cells[4].Value.ToString();
-            value.Address = row.Cells[5].Value.ToString();
-            value.Telephone = row.Cells[6].Value.ToString();
-            value.Contact = row.Cells[7].Value.ToString();
-
-            textBox_name.Text = value.Name;
-            textBox_address.Text = value.Address;
-            textBox_category.Text = value.Category;
-            textBox_taxCode.Text = value.TaxCode;
-            textBox_email.Text = value.Email;
-            textBox_telephone.Text = value.Telephone;
-            textBox_contact.Text = value.Contact;
+            textBox_id.Text = (string) row.Cells[0].Value;
+            textBox_name.Text = row.Cells[1].Value.ToString();
+            textBox_email.Text = row.Cells[2].Value.ToString();
+            textBox_taxCode.Text = row.Cells[3].Value.ToString();
+            textBox_category.Text = row.Cells[4].Value.ToString();
+            textBox_address.Text = row.Cells[5].Value.ToString();
+            textBox_telephone.Text = row.Cells[6].Value.ToString();
+            textBox_contact.Text = row.Cells[7].Value.ToString();
 
             this.Text = "Sửa khách hàng";
-            textBox_id.Text = value.id.ToString();
             editMode = true;
             this.ShowDialog();
             if (DialogResult == DialogResult.OK)
