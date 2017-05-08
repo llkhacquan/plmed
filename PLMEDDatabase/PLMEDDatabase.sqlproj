@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{66dfbe00-aaaf-4d1e-92aa-0dece4e1e50f}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -84,8 +84,5 @@
     <Build Include="Sales\Stored Procedures\deleteContract.sql" />
     <Build Include="Sales\Stored Procedures\selectContract.sql" />
     <Build Include="Sales\Stored Procedures\searchContract.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <RefactorLog Include="PLMEDDatabase.refactorlog" />
   </ItemGroup>
 </Project>

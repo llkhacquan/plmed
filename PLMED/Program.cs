@@ -17,6 +17,15 @@ namespace PLMED
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            try
+            {
+                string text = System.IO.File.ReadAllText("connection.txt");
+                Utility.CUSTOM_STRING = text;
+            } catch
+            {
+
+            }
             Application.Run(new MainForm());
         }
     }
