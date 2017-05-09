@@ -91,5 +91,9 @@
     <Build Include="Sales\Stored Procedures\selectStaff.sql" />
     <Build Include="Sales\Stored Procedures\selectProduct.sql" />
     <Build Include="Sales\Stored Procedures\searchProduct.sql" />
+    <Build Include="Sales\Stored Procedures\exportContract.sql" />
+    <Build Include="Sales\Stored Procedures\exportContractC.sql" />
+    <Build Include="Sales\Stored Procedures\exportContractCS.sql" />
+    <Build Include="Sales\Stored Procedures\exportContractS.sql" />
   </ItemGroup>
 </Project>

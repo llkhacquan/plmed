@@ -162,71 +162,13 @@ namespace PLMED
 
         private void loadComboBoxes()
         {
-            comboBox_customer.DataSource = loadCustomers();
+            comboBox_customer.DataSource = Utility.loadCustomers();
             comboBox_customer.DisplayMember = "name";
             comboBox_customer.ValueMember = "id";
 
-            comboBox_staff.DataSource = loadStaffs();
+            comboBox_staff.DataSource = Utility.loadStaffs();
             comboBox_staff.DisplayMember = "name";
             comboBox_staff.ValueMember = "id";
-        }
-
-        private List<Customer> loadCustomers()
-        {
-            List<Customer> customers = new List<Customer>();
-            SqlConnection conn = new SqlConnection(Utility.GetConnectionString());
-            SqlCommand cmdSelectCustomer = new SqlCommand("SELECT * from [Sales].[Customer]", conn);
-            try
-            {
-                conn.Open();
-                SqlDataReader customersReader = cmdSelectCustomer.ExecuteReader();
-
-                while (customersReader.Read())
-                {
-                    Customer c = new Customer();
-                    c.id = (int)customersReader["id"];
-                    c.Name = (string)customersReader["name"];
-                    customers.Add(c);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Không lấy được dữ liệu về khách hàng!\n" + ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
-            return customers;
-        }
-
-        private List<Staff> loadStaffs()
-        {
-            List<Staff> staffs = new List<Staff>();
-            SqlConnection conn = new SqlConnection(Utility.GetConnectionString());
-            SqlCommand cmdSelectCustomer = new SqlCommand("SELECT * from [Sales].[Staff]", conn);
-            try
-            {
-                conn.Open();
-                SqlDataReader staffsReader = cmdSelectCustomer.ExecuteReader();
-
-                while (staffsReader.Read())
-                {
-                    Staff c = new Staff();
-                    c.id = (int)staffsReader["id"];
-                    c.Name = (string)staffsReader["name"];
-                    staffs.Add(c);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Không lấy được dữ liệu về khách hàng!\n" + ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
-            return staffs;
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)

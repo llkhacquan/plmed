@@ -61,6 +61,15 @@ namespace PLMED
             form.Dispose();
         }
 
+        private void button_export_Click(object sender, EventArgs e)
+        {
+            ExportForm form = new ExportForm();
+            Hide();
+            form.ShowDialog();
+            Show();
+            form.Dispose();
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
             if (!USER.Equals(textBox_user.Text) || !PASSWORD.Equals(textBox_password.Text))

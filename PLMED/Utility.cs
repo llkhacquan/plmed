@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
+using PLMED.entity;
+using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace PLMED
 {
@@ -34,5 +37,65 @@ namespace PLMED
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
+        internal static List<Customer> loadCustomers()
+        {
+            List<Customer> customers = new List<Customer>();
+            SqlConnection conn = new SqlConnection(Utility.GetConnectionString());
+            SqlCommand cmdSelectCustomer = new SqlCommand("SELECT * from [Sales].[Customer]", conn);
+            try
+            {
+                conn.Open();
+                SqlDataReader customersReader = cmdSelectCustomer.ExecuteReader();
+
+                while (customersReader.Read())
+                {
+                    Customer c = new Customer();
+                    c.id = (int)customersReader["id"];
+                    c.Name = (string)customersReader["name"];
+                    customers.Add(c);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không lấy được dữ liệu về khách hàng!\n" + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return customers;
+        }
+
+        internal static List<Staff> loadStaffs()
+        {
+            List<Staff> staffs = new List<Staff>();
+            SqlConnection conn = new SqlConnection(Utility.GetConnectionString());
+            SqlCommand cmdSelectCustomer = new SqlCommand("SELECT * from [Sales].[Staff]", conn);
+            try
+            {
+                conn.Open();
+                SqlDataReader staffsReader = cmdSelectCustomer.ExecuteReader();
+
+                while (staffsReader.Read())
+                {
+                    Staff c = new Staff();
+                    c.id = (int)staffsReader["id"];
+                    c.Name = (string)staffsReader["name"];
+                    staffs.Add(c);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không lấy được dữ liệu về khách hàng!\n" + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return staffs;
+        }
     }
+
+
 }
