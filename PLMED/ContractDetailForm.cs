@@ -23,13 +23,13 @@ namespace PLMED
         {
             if (query == null)
             {
-                SqlCommand cmd = new SqlCommand("Sales.selectContract");
+                SqlCommand cmd = new SqlCommand("[Sales].[selectContract]");
                 cmd.CommandType = CommandType.StoredProcedure;
                 return cmd;
             }
             else
             {
-                SqlCommand cmd = new SqlCommand("Sales.searchContract");
+                SqlCommand cmd = new SqlCommand("[Sales].[searchContract]");
                 cmd.Parameters.Add("@query", SqlDbType.NVarChar, 100).Value = query.ToUpper();
                 cmd.CommandType = CommandType.StoredProcedure;
                 return cmd;

@@ -187,6 +187,23 @@ namespace PLMED
             else
                 return false;
         }
+
+        internal override SqlCommand load(Type type, string query)
+        {
+            if (query == null)
+            {
+                SqlCommand cmd = new SqlCommand("[Sales].[selectCustomer]");
+                cmd.CommandType = CommandType.StoredProcedure;
+                return cmd;
+            }
+            else
+            {
+                SqlCommand cmd = new SqlCommand("[Sales].[searchCustomer]");
+                cmd.Parameters.Add("@query", SqlDbType.NVarChar, 100).Value = query.ToUpper();
+                cmd.CommandType = CommandType.StoredProcedure;
+                return cmd;
+            }
+        }
     }
 
 }

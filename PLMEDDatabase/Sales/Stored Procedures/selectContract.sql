@@ -1,7 +1,13 @@
 ﻿CREATE PROCEDURE [Sales].[selectContract] 
 AS
 BEGIN  
-	SELECT [Con].[id], [Con].[name], [Cus].[name], [Sta].[name], [Con].[value], [Con].[signdate]
+	SELECT [Con].[id] AS 'Id', 
+		[Con].[code] AS 'Mã hợp đồng', 
+		[Con].[name] AS 'Tên hợp đồng', 
+		[Cus].[name] AS 'Tên khách hàng', 
+		[Sta].[name] AS 'Tên nhân viên', 
+		[Con].[value] AS 'Giá trị', 
+		[Con].[signdate] AS 'Ngày ký hợp đồng'
 	FROM [Sales].[Contract] AS Con 
 	INNER JOIN [Sales].[Customer] AS Cus
 			ON [Con].[customer_id] = [Cus].[id]

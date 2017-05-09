@@ -9,7 +9,15 @@
 @id INT
 AS  
 BEGIN  
-UPDATE [Sales].[Customer] SET name = @name, email = @email, taxcode = @taxcode, category = @category, address = @address, contact = @contact 
+UPDATE [Sales].[Customer] 
+SET 
+	name = @name, 
+	email = @email, 
+	taxcode = @taxcode, 
+	category = @category, 
+	address = @address, 
+	telephone = @telephone,
+	contact = @contact 
 WHERE id = @id;
 RETURN @@ERROR 
 END

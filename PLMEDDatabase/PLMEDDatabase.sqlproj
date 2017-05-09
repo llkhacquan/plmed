@@ -23,6 +23,7 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <GenerateCreateScript>False</GenerateCreateScript>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -84,5 +85,11 @@
     <Build Include="Sales\Stored Procedures\deleteContract.sql" />
     <Build Include="Sales\Stored Procedures\selectContract.sql" />
     <Build Include="Sales\Stored Procedures\searchContract.sql" />
+    <Build Include="Sales\Stored Procedures\searchCustomer.sql" />
+    <Build Include="Sales\Stored Procedures\selectCustomer.sql" />
+    <Build Include="Sales\Stored Procedures\searchStaff.sql" />
+    <Build Include="Sales\Stored Procedures\selectStaff.sql" />
+    <Build Include="Sales\Stored Procedures\selectProduct.sql" />
+    <Build Include="Sales\Stored Procedures\searchProduct.sql" />
   </ItemGroup>
 </Project>
