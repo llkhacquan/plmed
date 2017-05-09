@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,8 +25,9 @@ namespace PLMED
             SqlCommand cmd;
             if (!checkBox_customer.Checked && !checkBox_staff.Checked)
             {
-                cmd = new SqlCommand("[Sales].[exportContract]");                
-            } else if (checkBox_customer.Checked && checkBox_staff.Checked)
+                cmd = new SqlCommand("[Sales].[exportContract]");
+            }
+            else if (checkBox_customer.Checked && checkBox_staff.Checked)
             {
                 cmd = new SqlCommand("[Sales].[exportContractCS]");
                 cmd.Parameters.Add("@staff_id", SqlDbType.Int).Value = (comboBox_staff.SelectedItem as Staff).id;
@@ -35,11 +37,13 @@ namespace PLMED
             {
                 cmd = new SqlCommand("[Sales].[exportContractC]");
                 cmd.Parameters.Add("@customer_id", SqlDbType.Int).Value = (comboBox_customer.SelectedItem as Customer).id;
-            } else if (!checkBox_customer.Checked && checkBox_staff.Checked)
+            }
+            else if (!checkBox_customer.Checked && checkBox_staff.Checked)
             {
                 cmd = new SqlCommand("[Sales].[exportContractS]");
                 cmd.Parameters.Add("@staff_id", SqlDbType.Int).Value = (comboBox_staff.SelectedItem as Staff).id;
-            } else
+            }
+            else
             {
                 throw new Exception("Error!");
             }
@@ -69,7 +73,21 @@ namespace PLMED
 
         private void button_export_Click(object sender, EventArgs e)
         {
-
+            dataGridView.SelectAll();
+            DataObject dataObj = dataGridView.GetClipboardContent();
+            if (dataObj != null)
+                Clipboard.SetDataObject(dataObj);
+            Microsoft.Office.Interop.Excel.Application xlexcel;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+            xlexcel = new Microsoft.Office.Interop.Excel.Application();
+            xlexcel.Visible = true;
+            xlWorkBook = xlexcel.Workbooks.Add(misValue);
+            xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[1, 1];
+            CR.Select();
+            xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
         }
 
         private void button_time_this_week_Click(object sender, EventArgs e)
