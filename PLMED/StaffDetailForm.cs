@@ -28,7 +28,7 @@ namespace PLMED
             }
             else
             {
-                SqlCommand cmd = new SqlCommand("[Sales].[searchConStaff]");
+                SqlCommand cmd = new SqlCommand("[Sales].[searchStaff]");
                 cmd.Parameters.Add("@query", SqlDbType.NVarChar, 100).Value = query.ToUpper();
                 cmd.CommandType = CommandType.StoredProcedure;
                 return cmd;
