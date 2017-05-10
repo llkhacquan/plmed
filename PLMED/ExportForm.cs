@@ -92,22 +92,47 @@ namespace PLMED
 
         private void button_time_this_week_Click(object sender, EventArgs e)
         {
+            dateTimePicker_from.Value = StartOfWeek(DateTime.Now, DayOfWeek.Monday);
+            dateTimePicker_to.Value = StartOfWeek(DateTime.Now, DayOfWeek.Monday).AddDays(6);
+        }
 
+        private static DateTime StartOfWeek(DateTime dt, DayOfWeek startOfWeek)
+        {
+            int diff = dt.DayOfWeek - startOfWeek;
+            if (diff < 0)
+            {
+                diff += 7;
+            }
+            return dt.AddDays(-1 * diff).Date;
         }
 
         private void button_time_last_month_Click(object sender, EventArgs e)
         {
-
+            DateTime now = DateTime.Now;
+            if (now.Month == 1)
+            {
+                dateTimePicker_from.Value = new DateTime(now.Year - 1, 12, 1);
+                dateTimePicker_to.Value = new DateTime(now.Year - 1, 12, 31);
+            }
+            else
+            {
+                dateTimePicker_from.Value = new DateTime(now.Year, now.Month - 1, 1);
+                dateTimePicker_to.Value = new DateTime(now.Year, now.Month - 1, DateTime.DaysInMonth(now.Year, now.Month - 1));
+            }
         }
 
         private void button_time_this_month_Click(object sender, EventArgs e)
         {
-
+            DateTime now = DateTime.Now;
+            dateTimePicker_from.Value = new DateTime(now.Year, now.Month, 1);
+            dateTimePicker_to.Value = new DateTime(now.Year, now.Month, DateTime.DaysInMonth(now.Year, now.Month));
         }
 
         private void button_time_this_year_Click(object sender, EventArgs e)
         {
-
+            DateTime now = DateTime.Now;
+            dateTimePicker_from.Value = new DateTime(now.Year, 1, 31);
+            dateTimePicker_to.Value = new DateTime(now.Year, 12, 31);
         }
 
         private void ExportForm_Load(object sender, EventArgs e)
