@@ -73,7 +73,28 @@ namespace PLMED
 
         private void button_export_Click(object sender, EventArgs e)
         {
-
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "CVS files|*.csv";
+            dialog.ShowDialog();
+            if (dialog.FileName != "")
+            {
+                using (StreamWriter file = new StreamWriter(dialog.FileName, false, Encoding.UTF8))
+                {
+                    foreach (DataGridViewColumn c in dataGridView.Columns)
+                    {
+                        file.Write(c.HeaderText + ",");
+                    }
+                    file.WriteLine();
+                    foreach (DataGridViewRow row in dataGridView.Rows)
+                    {
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            file.Write(cell.FormattedValue.ToString() + ",");
+                        }
+                        file.WriteLine();
+                    }
+                }
+            }
         }
 
         private void button_time_this_week_Click(object sender, EventArgs e)
