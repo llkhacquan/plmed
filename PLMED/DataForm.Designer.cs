@@ -62,17 +62,6 @@
             btn_edit.UseVisualStyleBackColor = true;
             btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
-            // button_search
-            // 
-            this.button_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_search.Location = new System.Drawing.Point(850, 12);
-            this.button_search.Name = "button_search";
-            this.button_search.Size = new System.Drawing.Size(123, 81);
-            this.button_search.TabIndex = 8;
-            this.button_search.Text = "Tìm kiếm";
-            this.button_search.UseVisualStyleBackColor = true;
-            this.button_search.Click += new System.EventHandler(this.button_search_Click);
-            // 
             // btn_new
             // 
             btn_new.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -83,6 +72,17 @@
             btn_new.Text = "Tạo mới";
             btn_new.UseVisualStyleBackColor = true;
             btn_new.Click += new System.EventHandler(this.btn_new_Click);
+            // 
+            // button_search
+            // 
+            this.button_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_search.Location = new System.Drawing.Point(850, 12);
+            this.button_search.Name = "button_search";
+            this.button_search.Size = new System.Drawing.Size(123, 81);
+            this.button_search.TabIndex = 8;
+            this.button_search.Text = "Tìm kiếm";
+            this.button_search.UseVisualStyleBackColor = true;
+            this.button_search.Click += new System.EventHandler(this.button_search_Click);
             // 
             // textBox_search
             // 
@@ -100,12 +100,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(12, 51);
+            this.dataGridView.Location = new System.Drawing.Point(12, 38);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(824, 585);
+            this.dataGridView.Size = new System.Drawing.Size(824, 598);
             this.dataGridView.TabIndex = 7;
             // 
             // DataForm
