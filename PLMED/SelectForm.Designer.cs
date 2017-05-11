@@ -42,51 +42,66 @@
             // 
             // button_customer
             // 
+            button_customer.Image = global::PLMED.Properties.Resources.Client_Company_50;
+            button_customer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             button_customer.Location = new System.Drawing.Point(12, 12);
             button_customer.Name = "button_customer";
             button_customer.Size = new System.Drawing.Size(213, 117);
             button_customer.TabIndex = 0;
             button_customer.Text = "Khách hàng";
+            button_customer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button_customer.UseVisualStyleBackColor = true;
             button_customer.Click += new System.EventHandler(this.button_customer_Click);
             // 
             // button_staff
             // 
+            button_staff.Image = global::PLMED.Properties.Resources.Employee_Card_50;
+            button_staff.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             button_staff.Location = new System.Drawing.Point(231, 12);
             button_staff.Name = "button_staff";
             button_staff.Size = new System.Drawing.Size(213, 117);
             button_staff.TabIndex = 1;
             button_staff.Text = "Nhân viên";
+            button_staff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button_staff.UseVisualStyleBackColor = true;
             button_staff.Click += new System.EventHandler(this.button_staff_Click);
             // 
             // button_product
             // 
+            button_product.Image = global::PLMED.Properties.Resources.Product_50;
+            button_product.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             button_product.Location = new System.Drawing.Point(12, 135);
             button_product.Name = "button_product";
             button_product.Size = new System.Drawing.Size(213, 117);
             button_product.TabIndex = 2;
             button_product.Text = "Sản phẩm";
+            button_product.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button_product.UseVisualStyleBackColor = true;
             button_product.Click += new System.EventHandler(this.button_product_Click);
             // 
             // button_contract
             // 
+            button_contract.Image = global::PLMED.Properties.Resources.Document_50;
+            button_contract.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             button_contract.Location = new System.Drawing.Point(231, 135);
             button_contract.Name = "button_contract";
             button_contract.Size = new System.Drawing.Size(213, 117);
             button_contract.TabIndex = 3;
             button_contract.Text = "Hợp đồng";
+            button_contract.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button_contract.UseVisualStyleBackColor = true;
             button_contract.Click += new System.EventHandler(this.button_contract_Click);
             // 
             // button_report
             // 
+            button_report.Image = global::PLMED.Properties.Resources.Report_Card_50;
+            button_report.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             button_report.Location = new System.Drawing.Point(12, 258);
             button_report.Name = "button_report";
             button_report.Size = new System.Drawing.Size(432, 117);
             button_report.TabIndex = 4;
             button_report.Text = "Báo cáo";
+            button_report.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             button_report.UseVisualStyleBackColor = true;
             button_report.Click += new System.EventHandler(this.button_report_Click);
             // 

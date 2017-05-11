@@ -148,6 +148,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SelectForm.resx">
       <DependentUpon>SelectForm.cs</DependentUpon>
@@ -193,6 +194,18 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="icon\Add List-50.png" />
+    <None Include="icon\Edit-50.png" />
+    <None Include="icon\Delete-50.png" />
+    <None Include="icon\Client Company-50.png" />
+    <None Include="icon\Document-50.png" />
+    <None Include="icon\Employee Card-50.png" />
+    <None Include="icon\Product-50.png" />
+    <None Include="icon\Report Card-50.png" />
+    <Content Include="icon\Search-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
